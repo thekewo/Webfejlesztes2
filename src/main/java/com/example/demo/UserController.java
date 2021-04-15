@@ -24,16 +24,4 @@ public class UserController {
     void addUser(@RequestBody User user) {
         userRepository.save(user);
     }
-
-    @PostMapping("/users/{id}")
-    void deleteUser(@PathVariable("id") Long id) {
-        userRepository.delete(userRepository.findById(id).get());
-    }
-
-    @PostMapping("/users/{id}")
-    void updateUser(@PathVariable("id") Long id) {
-        Optional<User> userToUpdate = userRepository.findById(id);
-        //userToUpdate.get().name = user.name;
-        //userToUpdate.get().email = user.email;
-    }
 }
